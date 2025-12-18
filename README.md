@@ -1,5 +1,3 @@
-# DevelopmentFramework
-Embedded software development framework
 # 嵌入式代码框架设计规范
 
 > 版本：V1.0
