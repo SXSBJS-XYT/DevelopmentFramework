@@ -1,9 +1,6 @@
 # 嵌入式代码框架设计规范
 
-> 版本：V1.0
-> 
-> 日期：2025年
-> 
+> 版本：V1.0  
 > 适用范围：STM32系列MCU项目
 
 ---
@@ -1283,6 +1280,58 @@ Drv_Key_RegisterCallback(Dev_Key_Handler);
 |------|------|----------|
 | V1.0 | 2025-12-18 | 初始版本 |
 
----
+### C. 架构模块完成情况
+```
+Project/
+│
+├── App/                        # 应用层
+│   └── 项目相关，通常不可复用, 需用户自行实现
+│
+├── Device/                     # 设备层
+│   └── 待完善
+│
+├── Service/                    # 服务层
+│   └── 待完善
+│
+├── Protocol/                   # 协议层
+│   └── 需按照协议实现
+│
+├── Driver/                     # 驱动层
+│   └── 待完善
+│
+├── BSP/                        # 板级层
+│   └── 待完善
+│
+├── Utils/                      # 工具层
+│   ├── util_log.c
+│   └── util_log.h
+│
+├── OS/                         # 操作系统（可选）
+│   └── rt-thread/
+│
+├── Lib/                        # 库
+│   └── STM32F4xx_HAL_Driver/
+│
+├── Core/                       # CubeMX生成
+│   ├── Inc/
+│   │   ├── main.h
+│   │   ├── stm32f4xx_it.h
+│   │   └── stm32f4xx_hal_conf.h
+│   └── Src/
+│       ├── main.c              # 调用App_Main_Init/Run
+│       ├── stm32f4xx_it.c
+│       └── system_stm32f4xx.c
+│
+├── Drivers/                    # CMSIS
+│   └── CMSIS/
+│
+├── MDK-ARM/                    # Keil工程
+│   └── Project.uvprojx
+│
+└── Doc/                        # 文档
+    ├── 框架设计规范.md
+    └── API文档.md
+```
 
+---
 **文档结束**
